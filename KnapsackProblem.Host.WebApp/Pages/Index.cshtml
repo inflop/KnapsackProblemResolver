@@ -1,0 +1,133 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = nameof(KnapsackProblem.Host.WebApp);
+}
+
+@section scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const terminationConditionValue = document.querySelector('input[name="terminationCondition"]:checked').value;
+            console.log(`terminationConditionValue: ${terminationConditionValue}`);
+        });
+
+        function handleClick(terminationConditionRadio) {
+            const terminationConditionValue = terminationConditionRadio.value;
+            const isIterationsLimitWithoutImprovementSelected = (terminationConditionValue == 1);
+            const value = isIterationsLimitWithoutImprovementSelected ? @Model.Parameters!.IterationsLimitWithoutImprovement : @Model.Parameters.IterationsLimit;
+
+            console.log(`isIterationsLimitWithoutImprovementSelected: ${isIterationsLimitWithoutImprovementSelected}`);
+
+            const inputIterationsLimitWithoutImprovement = document.getElementById("iterationsLimitWithoutImprovement");
+            const inputIterationsLimit = document.getElementById("iterationsLimit");
+
+            inputIterationsLimitWithoutImprovement.disabled = !isIterationsLimitWithoutImprovementSelected;
+            inputIterationsLimit.disabled = isIterationsLimitWithoutImprovementSelected;
+
+            if (isIterationsLimitWithoutImprovementSelected) {
+                inputIterationsLimitWithoutImprovement.value = value;
+                inputIterationsLimit.value = null;
+            } else {
+                inputIterationsLimit.value = value;
+                inputIterationsLimitWithoutImprovement.value = null;
+            }
+        }
+    </script>
+}
+<div class="container">
+    <form method="post" enctype="multipart/form-data" class="row g-3">
+        <div class="row mt-4 align-items-start">
+            <div class="col">
+                <label for="knapsackSize" class="form-label">Knapsack size</label>
+                <input type="number" class="form-control" id="knapsackSize" min="0" asp-for="@Model.Parameters!.KnapsackSize">
+            </div>
+            <div class="col">
+                <label for="populationSize" class="form-label">Population size</label>
+                <input type="number" class="form-control" id="populationSize" min="0" asp-for="@Model.Parameters!.PopulationSize">
+            </div>
+        </div>
+        <div class="row mt-4 align-items-start">
+            <div class="col">
+                <label for="crossoverType" class="form-label">Crossover type</label>
+                <select id="selectionType" class="form-select" asp-for="@Model.Parameters!.CrossoverType"
+                    asp-items="Html.GetEnumSelectList<KnapsackProblem.Core.Enums.CrossoverType>()">
+                </select>
+            </div>
+            <div class="col">
+                <label for="selectionType" class="form-label">Selection type</label>
+                <select id="selectionType" class="form-select" asp-for="@Model.Parameters!.SelectionType"
+                    asp-items="Html.GetEnumSelectList<KnapsackProblem.Core.Enums.SelectionType>()">
+                </select>
+            </div>
+        </div>
+        <div class="row mt-4 align-items-start">
+            <div class="col">
+                <label for="crossoverRate" class="form-label">Crossover rate</label>&nbsp;=&nbsp;
+                <output id="crossoverRateValue">
+                    @Model.Parameters!.CrossoverRate
+                </output>
+                <input type="range" class="form-range" id="crossoverRate" asp-for="@Model.Parameters.CrossoverRate" min="0.01" max="0.99" step="0.01"
+                    oninput="crossoverRateValue.value = crossoverRate.value">
+            </div>
+            <div class="col">
+                <label for="mutationRate" class="form-label">Mutation rate</label>&nbsp;=&nbsp;
+                <output id="mutationRateValue">
+                    @Model.Parameters.MutationRate
+                </output>
+                <input type="range" class="form-range" id="mutationRate" asp-for="@Model.Parameters.MutationRate" min="0.01" max="0.99" step="0.01"
+                    oninput="mutationRateValue.value = mutationRate.value">
+            </div>
+        </div>
+        <div class="row mt-4 align-items-start">
+            <div class="col">
+                <div class="card">
+                    <div class="card-header">
+                        Termination condition
+                    </div>
+                    <div class="row mt-4 mx-4 align-items-start">
+                        <div class="col">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="terminationCondition"
+                                    id="iterationsLimitRadio" value="0" onclick="handleClick(this)">
+                                <label class="form-check-label" for="iterationsLimitRadio">
+                                    Iterations limit
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="terminationCondition"
+                                    id="iterationsLimitWithoutImprovementRadio" value="1" onclick="handleClick(this)"
+                                    checked>
+                                <label class="form-check-label" for="iterationsLimitWithoutImprovementRadio">
+                                    Iterations limit without improvement
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-4 mx-4 align-items-start">
+                        <div class="col">
+                            <input type="number" class="form-control" id="iterationsLimit" min="0" asp-for="@Model.Parameters.IterationsLimit" disabled>
+                        </div>
+                        <div class="col">
+                            <input type="number" class="form-control" id="iterationsLimitWithoutImprovement" min="0"
+                                asp-for="@Model.Parameters.IterationsLimitWithoutImprovement">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4 align-items-end">
+            <div class="col">
+                <div class="input-group">
+                    <input type="file" class="form-control" id="inputGroupFile01" asp-for="Upload">
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4 align-items-end">
+            <div class="col">
+                <input type="submit" class="btn btn-primary" value="Run" />
+            </div>
+        </div>
+    </form>
+</div>

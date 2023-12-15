@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KnapsackProblem.UnitTests",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KnapsackProblem.Application", "KnapsackProblem.Application\KnapsackProblem.Application.csproj", "{9DD02863-447D-4363-A812-9E370B24EBDC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KnapsackProblem.Host.WebApp", "KnapsackProblem.Host.WebApp\KnapsackProblem.Host.WebApp.csproj", "{949A2B52-706A-4C7F-A4B1-C41433830799}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KnapsackProblem.Host.GtkApp", "KnapsackProblem.Host.GtkApp\KnapsackProblem.Host.GtkApp.csproj", "{D580220E-15EF-44B7-867B-3C50CCC44A6D}"
 EndProject
 Global
@@ -35,6 +37,10 @@ Global
 		{9DD02863-447D-4363-A812-9E370B24EBDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9DD02863-447D-4363-A812-9E370B24EBDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9DD02863-447D-4363-A812-9E370B24EBDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{949A2B52-706A-4C7F-A4B1-C41433830799}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{949A2B52-706A-4C7F-A4B1-C41433830799}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{949A2B52-706A-4C7F-A4B1-C41433830799}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{949A2B52-706A-4C7F-A4B1-C41433830799}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D580220E-15EF-44B7-867B-3C50CCC44A6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D580220E-15EF-44B7-867B-3C50CCC44A6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D580220E-15EF-44B7-867B-3C50CCC44A6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
