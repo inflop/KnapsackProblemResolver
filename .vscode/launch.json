@@ -1,0 +1,45 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": ".NET Core Launch (console)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/KnapsackProblem.Host.Console/bin/Debug/net8.0/KnapsackProblem.Host.Console.dll",
+            "args": [
+                "-k",
+                "250",
+                "-p",
+                "300",
+                "-o",
+                "OnePoint",
+                "-n",
+                "30",
+                "-m",
+                "0.01",
+                "-c",
+                "0.9",
+                "-s",
+                "Tournament",
+                "-i",
+                "./input.csv"
+            ],
+            "cwd": "${workspaceFolder}/KnapsackProblem.Host.Console",
+            "console": "internalConsole",
+            "stopAtEntry": false
+        },
+        {
+            "name": ".NET Core Attach",
+            "type": "coreclr",
+            "request": "attach"
+        },
+        {
+            "name": "C#: KnapsackProblem.Host.GtkApp",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/KnapsackProblem.Host.GtkApp/KnapsackProblem.Host.GtkApp.csproj",
+            "launchConfigurationId": "TargetFramework=;KnapsackProblem.Host.GtkApp"
+        }
+    ]
+}
