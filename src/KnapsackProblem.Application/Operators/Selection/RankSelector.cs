@@ -29,7 +29,7 @@ public class RankSelector : ISelector
         var chromosomes = population.Chromosomes.ToArray();
         var sortedList = chromosomes.OrderByDescending(chromosome => chromosome.Fitness.Value).ToArray();
         
-        double totalRank = (chromosomes.Length * (chromosomes.Length + 1)) / 2d;
+        double totalRank = chromosomes.Length * (chromosomes.Length + 1) / 2d;
         double randomValue = _random.NextDouble() * totalRank;
         double sum = 0;
         int rank = 1;
