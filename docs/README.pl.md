@@ -59,3 +59,5 @@ Do testowania algorytmu genetycznego w rozwiązywaniu problemu plecakowego możn
 ### 4. Forma przekazania ćwiczenia
 
 Do oceny wysyłamy plik nr_indeksu_imię_nazwisko.zip, np. 123456_Jan_Kowalski.zip. Plik ten musi zawierać sprawozdanie z projektu w formacie PDF oraz plik z kodem źródłowym.
+
+> _(zawartość typu markdown została wygenerowana i przetłumaczona przez ChatGPT ze źródłowego [pliku PDF](./projekt.pdf))_

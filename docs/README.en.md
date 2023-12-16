@@ -59,3 +59,5 @@ For testing the genetic algorithm in solving the knapsack problem, you can use a
 ### 4. Submission Format
 
 For evaluation, send the file studentID_firstName_lastName.zip, e.g., 123456_Jan_Kowalski.zip. This file must include the project report in PDF format and the source code file.
+
+> _(the markdown content was generated and translated by ChatGPT from source [PDF file](./projekt.pdf))_
