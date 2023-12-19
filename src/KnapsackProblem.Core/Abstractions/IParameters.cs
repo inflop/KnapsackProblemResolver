@@ -1,6 +1,7 @@
 ﻿using KnapsackProblem.Core.Enums;
+using KnapsackProblem.Core.Parameters;
 
-namespace KnapsackProblem.Core.Parameters;
+namespace KnapsackProblem.Core.Abstractions;
 
 /// <summary>
 /// Interfejs reprezentujący parametry wejściowe algorytmu.
@@ -10,12 +11,12 @@ public interface IParameters
     /// <summary>
     /// Rozmiar plecaka.
     /// </summary>
-    Size KnapsackSize { get; }
+    int KnapsackSize { get; }
 
     /// <summary>
     /// Rozmiar populacji.
     /// </summary>
-    Size PopulationSize { get; }
+    int PopulationSize { get; }
 
     /// <summary>
     /// Ścieżka do pliku wejściowego zawierającego dane wartości i wag przedmiotów.
@@ -35,12 +36,12 @@ public interface IParameters
     /// <summary>
     /// Współczynnik procentowy mutacji osobnika.
     /// </summary>
-    Rate MutationRate { get; }
+    double MutationRate { get; }
 
     /// <summary>
     /// Współczynnik procentowy krzyżowania populacji.
     /// </summary>
-    Rate CrossoverRate { get; }
+    double CrossoverRate { get; }
 
     /// <summary>
     /// Zastosowany rodzaj selekcji osobników.
@@ -60,7 +61,7 @@ public interface IParameters
     /// <summary>
     /// Rozmiar chromosomu na podstawie ilości przedmiotów w zestawie.
     /// </summary>
-    Size ChromosomeSize { get; }
+    int ChromosomeSize { get; }
 
     /// <summary>
     /// Parametry wejściowe metody wyliczającej wartość przystosowania.

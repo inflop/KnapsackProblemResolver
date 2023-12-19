@@ -26,15 +26,15 @@ class Program
         }
     }
 
-    public static IHost CreateHost(string[] args)
+    private static IHost CreateHost(string[] args)
         => new HostBuilder()
             .UseConsoleLifetime()
-            .ConfigureLogging((hostBuilderContext, loggingBuilder) =>
+            .ConfigureLogging((_, loggingBuilder) =>
             {
                 loggingBuilder.ClearProviders();
                 loggingBuilder.AddConsole();
             })
-            .ConfigureServices((hostContext, services) =>
+            .ConfigureServices((_, services) =>
             {
                 services.AddKnapsackProblemResolver();
                 services.AddSingleton<MainWindow>();

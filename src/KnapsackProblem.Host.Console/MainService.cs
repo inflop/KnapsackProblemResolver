@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using KnapsackProblem.Core.Abstractions;
+using KnapsackProblem.Core.Abstractions.Operators;
 using KnapsackProblem.Core.Parameters;
 
 namespace KnapsackProblem.Host.Console;

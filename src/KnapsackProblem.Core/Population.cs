@@ -3,7 +3,7 @@ using KnapsackProblem.Core.Abstractions.Operators;
 namespace KnapsackProblem.Core;
 
 /// <summary>
-/// 
+/// Struktura będąca reprezentacją populacji
 /// </summary>
 public struct Population
 {

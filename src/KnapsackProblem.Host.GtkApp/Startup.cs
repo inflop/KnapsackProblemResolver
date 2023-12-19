@@ -3,22 +3,15 @@ using GtkApplication = Gtk.Application;
 
 namespace KnapsackProblem.Host.GtkApp;
 
-public class Startup
+public class Startup(MainWindow mainWindow)
 {
-    private readonly MainWindow _mainWindow;
-
-    public Startup(MainWindow mainWindow)
-    {
-        _mainWindow = mainWindow;
-    }
-
     public void Run()
     {
         var app = new GtkApplication("org.KnapsackProblem.Host.GtkApp.KnapsackProblem.Host.GtkApp", GLib.ApplicationFlags.None);
         app.Register(GLib.Cancellable.Current);
 
-        app.AddWindow(_mainWindow);
-        _mainWindow.Show();
+        app.AddWindow(mainWindow);
+        mainWindow.Show();
 
         GtkApplication.Run();
     }

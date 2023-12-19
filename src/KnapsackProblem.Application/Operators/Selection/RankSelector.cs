@@ -22,40 +22,14 @@ public class RankSelector : ISelector
     private readonly Random _random = new();
 
     public Chromosome Select(Population population)
-        => Select2(population);
-
-    private Chromosome Select1(Population population)
     {
-        var chromosomes = population.Chromosomes.ToArray();
-        var sortedList = chromosomes.OrderByDescending(chromosome => chromosome.Fitness.Value).ToArray();
-        
-        double totalRank = chromosomes.Length * (chromosomes.Length + 1) / 2d;
-        double randomValue = _random.NextDouble() * totalRank;
-        double sum = 0;
-        int rank = 1;
-        
-        foreach (var chromosome in sortedList)
-        { 
-            sum += rank;
-            if (sum >= randomValue)
-                return chromosome.Clone();
-        
-            rank++;
-        }
-        
-        return population.BestChromosome!.Clone();
-    }
-
-    private Chromosome Select2(Population population)
-    {
-        var chromosomes = population.Chromosomes.ToArray();
-        var sorted = chromosomes.OrderByDescending(chromosome => chromosome.Fitness.Value).ToArray();
-        var totalRank = (sorted.Length * (sorted.Length + 1)) / 2;
+        var chromosomes = population.Chromosomes.OrderByDescending(chromosome => chromosome.Fitness.Value).ToArray();
+        var totalRank = chromosomes.Length * (chromosomes.Length + 1) / 2;
         
         var rankWheel = new List<double>();
         var cumulativeRank = 0d;
         
-        for (var n = sorted.Length; n > 0; n--)
+        for (var n = chromosomes.Length; n > 0; n--)
         {
             cumulativeRank += (double)n / totalRank;
             rankWheel.Add(cumulativeRank);
@@ -67,10 +41,10 @@ public class RankSelector : ISelector
             .FirstOrDefault(r => r.Value >= randomValue);
         
         if (valueIndex is null)
-            return population.BestChromosome!;
+            return population.BestChromosome!.Clone();
         
-        var chromosome = sorted[valueIndex.Index].Clone();
+        var chromosome = chromosomes[valueIndex.Index].Clone();
         
-        return chromosome;        
+        return chromosome;
     }
 }
