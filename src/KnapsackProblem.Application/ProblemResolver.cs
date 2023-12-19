@@ -2,6 +2,7 @@
 using KnapsackProblem.Core;
 using KnapsackProblem.Core.Abstractions;
 using KnapsackProblem.Core.Abstractions.Factories;
+using KnapsackProblem.Core.Abstractions.Operators;
 using KnapsackProblem.Core.Parameters;
 
 namespace KnapsackProblem.Application;

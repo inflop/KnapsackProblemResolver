@@ -1,6 +1,4 @@
-﻿using KnapsackProblem.Core.Parameters;
-
-namespace KnapsackProblem.Core.Abstractions;
+﻿namespace KnapsackProblem.Core.Abstractions;
 
 /// <summary>
 /// Interfejs reprezentujący klasę obiektu rozwiązującego problem plecakowy. 

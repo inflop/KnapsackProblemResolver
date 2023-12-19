@@ -1,6 +1,7 @@
 using KnapsackProblem.Application.Operators;
 using KnapsackProblem.Core;
 using KnapsackProblem.Core.Abstractions;
+using KnapsackProblem.Core.Abstractions.Operators;
 using KnapsackProblem.Core.Parameters;
 using NSubstitute;
 using Shouldly;

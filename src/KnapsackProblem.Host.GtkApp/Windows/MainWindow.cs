@@ -48,10 +48,10 @@ public class MainWindow : Window
         InitializeControls();
         LoadParameters();
 
-        DeleteEvent += (s, a) => GtkApplication.Quit();
+        DeleteEvent += (_, _) => GtkApplication.Quit();
         _btnRun!.Clicked += _btnRun_Clicked!;
         _btnPreviewItems!.Clicked += _btnPreviewItems_Clicked!;
-        _fcInputFile!.SelectionChanged += (s, a) => _parameters.InputFile = _fcInputFile.Filename;
+        _fcInputFile!.SelectionChanged += (_, _) => _parameters.InputFile = _fcInputFile.Filename;
     }
 
     private void InitializeControls()

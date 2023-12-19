@@ -1,7 +1,7 @@
 ﻿using System.Text;
-using System.Text.Json;
 using KnapsackProblem.Core;
 using KnapsackProblem.Core.Abstractions;
+using KnapsackProblem.Core.Abstractions.Operators;
 using KnapsackProblem.Core.Enums;
 using KnapsackProblem.Core.Parameters;
 
@@ -9,19 +9,19 @@ namespace KnapsackProblem.Host.GtkApp;
 
 public class Parameters : IParameters
 {
-    public Size KnapsackSize { get; set; } = 250;
+    public int KnapsackSize { get; set; } = 250;
 
-    public Size PopulationSize { get; set; } = 300;
+    public int PopulationSize { get; set; } = 300;
 
     public string? InputFile { get; set; } = "./input.csv";
 
-    public int? IterationsLimit { get; set; } = null;
+    public int? IterationsLimit { get; set; }
 
     public int? IterationsLimitWithoutImprovement { get; set; } = 30;
 
-    public Rate MutationRate { get; set; } = 0.01d;
+    public double MutationRate { get; set; } = 0.01d;
 
-    public Rate CrossoverRate { get; set; } = 0.9d;
+    public double CrossoverRate { get; set; } = 0.9d;
 
     public SelectionType SelectionType { get; set; } = SelectionType.Roulette;
 
@@ -49,13 +49,10 @@ public class Parameters : IParameters
             return _items;
         }
 
-        set
-        {
-            _items = value;
-        }
+        set => _items = value;
     }
 
-    public Size ChromosomeSize
+    public int ChromosomeSize
         => Items.Count();
 
     public EvaluatorParameters EvaluatorParameters

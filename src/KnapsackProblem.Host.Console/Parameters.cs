@@ -14,13 +14,13 @@ public class Parameters : IParameters
     /// Rozmiar plecaka.
     /// </summary>
     [Option(shortName: 'k', longName: "knapsack-size", HelpText = "The size of the knapsack", Default = 250)]
-    public Size KnapsackSize { get; set; } = 250;
+    public int KnapsackSize { get; set; } = 250;
 
     /// <summary>
     /// Rozmiar populacji.
     /// </summary>
     [Option(shortName: 'p', longName: "population-size", HelpText = "The size of the population", Default = 300)]
-    public Size PopulationSize { get; set; } = 300;
+    public int PopulationSize { get; set; } = 300;
 
     /// <summary>
     /// Ścieżka do pliku wejściowego zawierającego dane wartości i wag przedmiotów.
@@ -44,13 +44,13 @@ public class Parameters : IParameters
     /// Współczynnik procentowy mutacji osobnika.
     /// </summary>
     [Option(shortName: 'm', longName: "mutation-rate", HelpText = "The mutation rate of the chromosome. The value between 0.01 and 0.99.", Default = .01d)]
-    public Rate MutationRate { get; set; } = .01d;
+    public double MutationRate { get; set; } = .01d;
 
     /// <summary>
     /// Współczynnik procentowy krzyżowania populacji.
     /// </summary>
     [Option(shortName: 'c', longName: "crossover-rate", HelpText = "The crossover rate of a population. The value between 0.01 and 0.99.", Default = .9d)]
-    public Rate CrossoverRate { get; set; } = .9d;
+    public double CrossoverRate { get; set; } = .9d;
 
     /// <summary>
     /// Zastosowany rodzaj selekcji osobników.
@@ -88,7 +88,7 @@ public class Parameters : IParameters
     /// Rozmiar chromosomu na podstawie ilości przedmiotów w zestawie.
     /// </summary>
     /// <returns></returns>
-    public Size ChromosomeSize
+    public int ChromosomeSize
         => Items.Count();
 
     public EvaluatorParameters EvaluatorParameters
