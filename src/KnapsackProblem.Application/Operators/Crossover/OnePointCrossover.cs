@@ -1,9 +1,15 @@
 ﻿using KnapsackProblem.Core;
-using KnapsackProblem.Core.Abstractions;
 using KnapsackProblem.Core.Abstractions.Operators;
 
 namespace KnapsackProblem.Application.Operators.Crossover;
 
+/// <summary>
+/// Krzyżowanie jednopunktowe.
+/// </summary>
+/// <remarks>
+/// W tej metodzie losowo wybiera się pojedynczy punkt podziału na chromosomach rodziców.
+/// Geny po jednej stronie punktu są wymieniane między dwoma rodzicami, tworząc dwa nowe chromosomy.
+/// </remarks>
 public class OnePointCrossover(Rate rate) : ICrossover
 {
     private Random _random = new();
@@ -18,10 +24,10 @@ public class OnePointCrossover(Rate rate) : ICrossover
             return new Chromosome[] { new (genesParent1), new (genesParent2) };
 
         // Losowe wyznaczenie indeksu będącego punktem przecięcia.
-        int index = _random.Next(1, parent2.Size);
+        int crossoverPoint = _random.Next(1, parent2.Size - 1);
 
-        var genes1 = SplitChromosomeAtPoint(index, parent1);
-        var genes2 = SplitChromosomeAtPoint(index, parent2);
+        var genes1 = SplitChromosomeAtPoint(crossoverPoint, parent1);
+        var genes2 = SplitChromosomeAtPoint(crossoverPoint, parent2);
 
 		var genes1_1 = genes1.part1; // pierwsza część chromosomu pierwszego rodzica.
 		var genes1_2 = genes1.part2; // druga część chromosomu pierwszego rodzica.

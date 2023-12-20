@@ -1,9 +1,15 @@
 ﻿using KnapsackProblem.Core;
-using KnapsackProblem.Core.Abstractions;
 using KnapsackProblem.Core.Abstractions.Operators;
 
 namespace KnapsackProblem.Application;
 
+/// <summary>
+/// Krzyżowanie jednorodne.
+/// </summary>
+/// <remarks>
+/// W tej metodzie każdy gen jest niezależnie wybierany od jednego z rodziców z określonym prawdopodobieństwem.
+/// To pozwala na bardziej równomierną wymianę informacji genetycznej.
+/// </remarks>
 public class UniformCrossover(Rate rate) : ICrossover
 {
     private Random _random = new();

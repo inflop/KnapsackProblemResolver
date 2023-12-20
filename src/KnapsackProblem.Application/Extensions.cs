@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using KnapsackProblem.Application.Factories;
-using KnapsackProblem.Core;
 using KnapsackProblem.Core.Abstractions;
 using KnapsackProblem.Core.Abstractions.Factories;
 

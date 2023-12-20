@@ -1,9 +1,15 @@
 ﻿using KnapsackProblem.Core;
-using KnapsackProblem.Core.Abstractions;
 using KnapsackProblem.Core.Abstractions.Operators;
 
 namespace KnapsackProblem.Application;
 
+/// <summary>
+/// Krzyżowanie dwupunktowe.
+/// </summary>
+/// <remarks>
+/// W tej metodzie losowo wybiera się dwa punkty podziału na chromosomach rodziców.
+/// Geny między punktami podziału są wymieniane między rodzicami.
+/// </remarks>
 public class MultiPointCrossover(Rate rate) : ICrossover
 {
     private Random _random = new();
