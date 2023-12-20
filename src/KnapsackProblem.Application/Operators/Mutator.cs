@@ -1,5 +1,4 @@
 ﻿using KnapsackProblem.Core;
-using KnapsackProblem.Core.Abstractions;
 using KnapsackProblem.Core.Abstractions.Operators;
 
 namespace KnapsackProblem.Application.Operators;
