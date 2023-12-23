@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace KnapsackProblem.Core;
+namespace KnapsackProblem.Core.Domain;
 
 /// <summary>
 /// Rekord reprezentujący wartość przystosowania chromosomu.

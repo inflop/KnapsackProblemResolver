@@ -1,4 +1,6 @@
-﻿namespace KnapsackProblem.Core.Abstractions;
+﻿using KnapsackProblem.Core.Domain;
+
+namespace KnapsackProblem.Core.Abstractions;
 
 /// <summary>
 /// Interfejs reprezentujący klasę dostawcy najlepszego chromosomu.

@@ -1,4 +1,5 @@
 ﻿using KnapsackProblem.Core.Enums;
+using KnapsackProblem.Core.ValueObjects;
 
 namespace KnapsackProblem.Core.Parameters;
 

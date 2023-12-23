@@ -1,10 +1,9 @@
 ﻿using KnapsackProblem.Application.Operators;
-using KnapsackProblem.Core;
 using KnapsackProblem.Core.Abstractions.Factories;
 using KnapsackProblem.Core.Abstractions.Operators;
 using KnapsackProblem.Core.Parameters;
 
-namespace KnapsackProblem.Application;
+namespace KnapsackProblem.Application.Factories;
 
 public class EvaluatorFactory : IEvaluatorFactory
 {

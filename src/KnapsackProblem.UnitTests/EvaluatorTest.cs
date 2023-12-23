@@ -2,7 +2,9 @@ using KnapsackProblem.Application.Operators;
 using KnapsackProblem.Core;
 using KnapsackProblem.Core.Abstractions;
 using KnapsackProblem.Core.Abstractions.Operators;
+using KnapsackProblem.Core.Domain;
 using KnapsackProblem.Core.Parameters;
+using KnapsackProblem.Core.ValueObjects;
 using NSubstitute;
 using Shouldly;
 

@@ -1,4 +1,5 @@
 ﻿using KnapsackProblem.Core;
+using KnapsackProblem.Core.Domain;
 using Shouldly;
 
 namespace KnapsackProblem.UnitTests;
