@@ -1,4 +1,4 @@
-﻿namespace KnapsackProblem.Core;
+﻿namespace KnapsackProblem.Core.Domain;
 
 /// <summary>
 /// Struktura typu ValueObject opisująca pojedynczy gen będący wartością bitową.

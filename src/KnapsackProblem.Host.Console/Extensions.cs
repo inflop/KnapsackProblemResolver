@@ -1,4 +1,5 @@
 using KnapsackProblem.Core;
+using KnapsackProblem.Core.ValueObjects;
 
 namespace KnapsackProblem.Host.Console;
 

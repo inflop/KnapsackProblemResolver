@@ -1,4 +1,4 @@
-﻿namespace KnapsackProblem.Core;
+﻿namespace KnapsackProblem.Core.ValueObjects;
 
 /// <summary>
 /// Struktura typu ValueObject reprezentująca

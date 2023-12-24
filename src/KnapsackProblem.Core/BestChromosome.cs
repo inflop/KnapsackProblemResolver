@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using KnapsackProblem.Core.Domain;
 
 namespace KnapsackProblem.Core;
 

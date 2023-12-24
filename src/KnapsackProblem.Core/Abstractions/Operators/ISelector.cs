@@ -1,4 +1,6 @@
-﻿namespace KnapsackProblem.Core.Abstractions.Operators;
+﻿using KnapsackProblem.Core.Domain;
+
+namespace KnapsackProblem.Core.Abstractions.Operators;
 
 /// <summary>
 /// Interfejs opisujący klasę odpowiedzialną za selekcję chromosomu.

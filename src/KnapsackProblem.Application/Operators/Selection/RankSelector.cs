@@ -1,5 +1,5 @@
-﻿using KnapsackProblem.Core;
-using KnapsackProblem.Core.Abstractions.Operators;
+﻿using KnapsackProblem.Core.Abstractions.Operators;
+using KnapsackProblem.Core.Domain;
 
 namespace KnapsackProblem.Application.Operators.Selection;
 

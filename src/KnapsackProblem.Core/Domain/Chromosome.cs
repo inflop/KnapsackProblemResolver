@@ -1,7 +1,8 @@
 ﻿using System.Text;
 using KnapsackProblem.Core.Abstractions.Operators;
+using KnapsackProblem.Core.ValueObjects;
 
-namespace KnapsackProblem.Core;
+namespace KnapsackProblem.Core.Domain;
 
 /// <summary>
 /// Reprezentacja chromosomu/osobnika populacji.

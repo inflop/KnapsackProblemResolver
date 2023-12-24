@@ -1,4 +1,6 @@
-﻿namespace KnapsackProblem.Core.Parameters;
+﻿using KnapsackProblem.Core.ValueObjects;
+
+namespace KnapsackProblem.Core.Parameters;
 
 /// <summary>
 /// Parametry wejściowe metody wyliczającej wartość przystosowania.

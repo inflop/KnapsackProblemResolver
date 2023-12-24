@@ -1,5 +1,5 @@
-﻿using KnapsackProblem.Core;
-using KnapsackProblem.Core.Abstractions.Operators;
+﻿using KnapsackProblem.Core.Abstractions.Operators;
+using KnapsackProblem.Core.Domain;
 
 namespace KnapsackProblem.Application.Operators.Selection;
 
@@ -18,14 +18,14 @@ namespace KnapsackProblem.Application.Operators.Selection;
 /// </summary>
 public class TournamentSelector : ISelector
 {
-    private readonly int _tournamentSize = 2;
+    private const int TournamentSize = 2;
     private readonly Random _random = new();
 
     public Chromosome Select(Population population)
     {
         var chromosomes = population.Chromosomes.ToArray();
         var selected = new List<Chromosome>();
-        for (int i = 0; i < _tournamentSize; i++)
+        for (int i = 0; i < TournamentSize; i++)
         {
             int randomIndex = _random.Next(population.Size);
             var chromosome = chromosomes[randomIndex];

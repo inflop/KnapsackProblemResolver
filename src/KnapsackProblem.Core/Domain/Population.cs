@@ -1,14 +1,14 @@
 using KnapsackProblem.Core.Abstractions.Operators;
+using KnapsackProblem.Core.ValueObjects;
 
-namespace KnapsackProblem.Core;
+namespace KnapsackProblem.Core.Domain;
 
 /// <summary>
 /// Struktura będąca reprezentacją populacji
 /// </summary>
 public struct Population
 {
-    private IList<Chromosome> _chromosomes;
-    private Chromosome? _bestChromosome;
+    private readonly IList<Chromosome> _chromosomes;
 
     public Population()
         => _chromosomes = new List<Chromosome>();
@@ -17,14 +17,13 @@ public struct Population
     /// 
     /// </summary>
     /// <param name="chromosomes"></param>
-    public Population(IEnumerable<Chromosome> chromosomes)
+    private Population(IEnumerable<Chromosome> chromosomes)
         => _chromosomes = chromosomes.ToList();
 
     /// <summary>
     /// 
     /// </summary>
-    public readonly Chromosome? BestChromosome
-        => _bestChromosome;
+    public Chromosome? BestChromosome { get; private set; }
 
     /// <summary>
     /// Lista osobników w populacji.
@@ -52,7 +51,7 @@ public struct Population
     /// <param name="populationSize">Rozmiar populacji do utworzenia</param>
     /// <param name="chromosomeSize">Rozmiar chromosomu osobnika tworzonej populacji</param>
     public static Population CreateRandom(Size populationSize, Size chromosomeSize)
-        => new (Enumerable.Range(1, populationSize).Select(i => Chromosome.CreateRandom(chromosomeSize)));
+        => new (Enumerable.Range(1, populationSize).Select(_ => Chromosome.CreateRandom(chromosomeSize)));
 
     /// <summary>
     /// 
@@ -63,7 +62,7 @@ public struct Population
         foreach (var chromosome in Chromosomes)
             chromosome.Evaluate(evaluator);
 
-        _bestChromosome = Chromosomes.MaxBy(i => i.Fitness.Value);
+        BestChromosome = Chromosomes.MaxBy(c => c.Fitness.Value);
     }
 
     public override string ToString()
