@@ -1,5 +1,4 @@
-﻿using KnapsackProblem.Core;
-using KnapsackProblem.Core.Abstractions.Operators;
+﻿using KnapsackProblem.Core.Abstractions.Operators;
 using KnapsackProblem.Core.Domain;
 using KnapsackProblem.Core.ValueObjects;
 
@@ -14,7 +13,7 @@ namespace KnapsackProblem.Application.Operators.Crossover;
 /// </remarks>
 public class UniformCrossover(Rate rate) : ICrossover
 {
-    private Random _random = new();
+    private readonly Random _random = new();
 
     public IEnumerable<Chromosome> Cross(Chromosome parent1, Chromosome parent2)
     {
