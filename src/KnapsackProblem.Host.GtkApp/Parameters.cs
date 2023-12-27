@@ -46,7 +46,7 @@ public class Parameters : IParameters
                     return new Item(value, weight);
                 });
 
-            return _items;
+            return _items.ToList();
         }
 
         set => _items = value;

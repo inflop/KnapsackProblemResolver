@@ -68,10 +68,7 @@ public class Parameters : IParameters
     /// Lista przedmiotów.
     /// </summary>
     public IEnumerable<Item> Items
-    {
-        get
-        {
-            return File.ReadAllLines(InputFile!)
+        => File.ReadAllLines(InputFile!)
             .Skip(1)
             .Select(line =>
             {
@@ -80,9 +77,7 @@ public class Parameters : IParameters
                 _ = int.TryParse(columns[1], out int weight);
 
                 return new Item(value, weight);
-            });
-        }
-    }
+            }).ToList();
 
     /// <summary>
     /// Rozmiar chromosomu na podstawie ilości przedmiotów w zestawie.
