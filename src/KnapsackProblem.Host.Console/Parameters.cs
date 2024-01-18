@@ -86,14 +86,11 @@ public class Parameters : IParameters
     public int ChromosomeSize
         => Items.Count();
 
-    public EvaluatorParameters EvaluatorParameters
-        => new EvaluatorParameters(Items, KnapsackSize);
+    public EvaluatorParameters EvaluatorParameters => new(Items, KnapsackSize);
 
-    public CrossoverParameters CrossoverParameters
-        => new CrossoverParameters(CrossoverType, CrossoverRate);
+    public CrossoverParameters CrossoverParameters => new(CrossoverType, CrossoverRate);
 
-    public IterationParameters IterationParameters
-        => new IterationParameters(IterationsLimit, IterationsLimitWithoutImprovement);
+    public IterationParameters IterationParameters => new(IterationsLimit, IterationsLimitWithoutImprovement);
 
     /// <summary>
     /// Zwraca listę parametrów jako obiekt typu JSON w postaci łańcucha znaków.
