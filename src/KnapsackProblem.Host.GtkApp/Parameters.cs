@@ -33,7 +33,7 @@ public class Parameters : IParameters
         get
         {
             if (InputFile is null)
-                return Enumerable.Empty<Item>();
+                return [];
 
             _items = File.ReadAllLines(InputFile!)
                 .Skip(1)
