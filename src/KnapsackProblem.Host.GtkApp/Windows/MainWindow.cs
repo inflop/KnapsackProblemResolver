@@ -33,7 +33,7 @@ public class MainWindow : Window
     [UI] private Button? _btnRun = null;
     [UI] private Button? _btnPreviewItems = null;
 
-    private Parameters _parameters = new();
+    private readonly Parameters _parameters = new();
     private readonly IProblemResolver? _problemResolver;
 
     public MainWindow(IProblemResolver problemResolver) : this(new Builder("gui.glade"))
